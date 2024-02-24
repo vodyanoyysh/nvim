@@ -52,4 +52,5 @@ require("lazy").setup({
     {"nvim-lualine/lualine.nvim",
       dependencies = {"nvim-tree/nvim-web-devicons"}
     },
+    {"codota/tabnine-nvim", build = "./dl_binaries.sh"},
 })

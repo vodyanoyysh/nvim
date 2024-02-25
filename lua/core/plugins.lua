@@ -29,6 +29,7 @@ require("lazy").setup({
     {"navarasu/onedark.nvim", name = "onedark"},
     {"Everblush/nvim", name = "everblush"},
     {"rebelot/kanagawa.nvim"},
+    {"decaycs/decay.nvim", name = "decay"},
     -- auto complite
     {"hrsh7th/cmp-nvim-lsp"},
     {"hrsh7th/cmp-buffer"},

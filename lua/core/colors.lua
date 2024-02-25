@@ -5,4 +5,5 @@ function set_theme(color)
     vim.cmd.colorscheme(color)
 end
 
-set_theme("kanagawa")
+-- set_theme("kanagawa-dragon")
+set_theme("dark-decay")

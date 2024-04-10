@@ -25,11 +25,21 @@ vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
 vim.keymap.set("n", "|", ":vsplit<CR>") -- vertical split
 vim.keymap.set("n", "---", ":split<CR>")
 
+-- buffers
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>") -- next tab
 vim.keymap.set("n", "<s-Tab>", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<leader>c", ":BufferLinePickClose<CR>") -- close tab
+
+-- git
+vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame <CR>") -- git blame
 
 
 -- other
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>w", ":w<CR>") -- save
+
+
+-- cheat sheet
+-- gd - go to def
+-- gD - go to dec
+-- ctrl + t - go back

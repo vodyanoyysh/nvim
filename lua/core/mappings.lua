@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 
 -- neotree
 vim.keymap.set("n", "<leader>e", ":Neotree float focus<CR>") -- file explorer
+vim.keymap.set("n", "<leader>g", ":Neotree git_status focus float<CR>") -- git status explorer
 
 
 

@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 
 
 -- neotree
-vim.keymap.set("n", "<leader>e", ":Neotree float focus<CR>")
+vim.keymap.set("n", "<leader>e", ":Neotree float focus<CR>") -- file explorer
 
 
 
@@ -25,11 +25,11 @@ vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
 vim.keymap.set("n", "|", ":vsplit<CR>") -- vertical split
 vim.keymap.set("n", "---", ":split<CR>")
 
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>") -- next tab
 vim.keymap.set("n", "<s-Tab>", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>c", ":BufferLinePickClose<CR>")
+vim.keymap.set("n", "<leader>c", ":BufferLinePickClose<CR>") -- close tab
 
 
 -- other
 vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>") -- save

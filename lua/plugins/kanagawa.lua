@@ -2,7 +2,7 @@ require('kanagawa').setup({
     compile = false,             
     undercurl = true,            
     commentStyle = { italic = true },
-    functionStyle = {},
+    functionStyle = { italic = false},
     keywordStyle = { italic = true},
     statementStyle = { bold = true },
     typeStyle = {},
@@ -16,4 +16,8 @@ require('kanagawa').setup({
     overrides = function(colors)
         return {}
     end,
+    theme = "dragon",
+    background = {
+        dark = "dragon"
+    }
 })    

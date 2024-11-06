@@ -30,6 +30,9 @@ require("lazy").setup({
     {"Everblush/nvim", name = "everblush"},
     {"rebelot/kanagawa.nvim"},
     {"decaycs/decay.nvim", name = "decay"},
+    {"catppuccin/nvim", name = "catppuccin"},
+    {"dgox16/oldworld.nvim", name = "oldworld"},
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     -- auto complite
     {"hrsh7th/cmp-nvim-lsp"},
     {"hrsh7th/cmp-buffer"},
@@ -38,7 +41,8 @@ require("lazy").setup({
     {"hrsh7th/nvim-cmp"},
 
     -- ai
-    { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
+    -- { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
+    {"github/copilot.vim"},
     -- telescope
     {"nvim-telescope/telescope.nvim", tag = "0.1.5",
       dependencies = {"nvim-lua/plenary.nvim"}

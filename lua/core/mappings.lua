@@ -8,8 +8,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", ":Neotree float focus<CR>") -- file explorer
 vim.keymap.set("n", "<leader>g", ":Neotree git_status focus float<CR>") -- git status explorer
 
-
-
 -- telescope
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -25,6 +23,7 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
 vim.keymap.set("n", "|", ":vsplit<CR>") -- vertical split
 vim.keymap.set("n", "---", ":split<CR>")
+vim.keymap.set("n", "<leader>t", ":split | terminal<CR>")
 
 -- buffers
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>") -- next tab

@@ -1,5 +1,5 @@
 vim.wo.number = true
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 
 vim.opt.wrap = false
 vim.opt.shell = "/bin/fish"
@@ -8,7 +8,7 @@ vim.opt.mouse = "a"
 vim.opt.mousefocus = true
 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 
 vim.opt.clipboard = "unnamedplus"

@@ -63,5 +63,6 @@ require("lazy").setup({
   },
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   { "folke/which-key.nvim" },
-  { "echasnovski/mini.nvim" }
+  { "echasnovski/mini.nvim" },
+  { "windwp/nvim-ts-autotag"}
 })

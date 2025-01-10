@@ -23,4 +23,5 @@ wk.add({
         { "<leader>di", "<cmd>lua require('dap').step_into()<cr>", desc = "Шаг внутрь", mode = "n" },
         { "<leader>dO", "<cmd>lua require('dap').step_out()<cr>", desc = "Шаг наружу", mode = "n" },
         { "<leader>dq", "<cmd>lua require('dap').terminate()<cr>", desc = "Завершить отладку", mode = "n" },
+    { "<leader>l", group = "lsp" },
 })

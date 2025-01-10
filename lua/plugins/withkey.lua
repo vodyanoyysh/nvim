@@ -16,6 +16,4 @@ wk.add({
         { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Git Blame", mode = "n" },
         { "<leader>gg", "<cmd>Neotree float git_status toggle<cr>", desc = "Git Status", mode = "n" },
         { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits", mode = "n" },
-        -- {"<leader>i", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc =  "Организовать импорты", mode="n" },
-
 })

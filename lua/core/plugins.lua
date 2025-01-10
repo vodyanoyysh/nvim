@@ -64,5 +64,14 @@ require("lazy").setup({
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   { "folke/which-key.nvim" },
   { "echasnovski/mini.nvim" },
-  { "windwp/nvim-ts-autotag"}
+  { "windwp/nvim-ts-autotag"},
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+        "nvim-neotest/nvim-nio",
+        "rcarriga/nvim-dap-ui",
+        "mfussenegger/nvim-dap-python",
+        "theHamsta/nvim-dap-virtual-text",
+    }
+  }
 })

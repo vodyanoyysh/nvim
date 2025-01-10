@@ -16,4 +16,11 @@ wk.add({
         { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Git Blame", mode = "n" },
         { "<leader>gg", "<cmd>Neotree float git_status toggle<cr>", desc = "Git Status", mode = "n" },
         { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits", mode = "n" },
+    { "<leader>d", group = "debug" },
+        { "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<cr>", desc = "Точка останова", mode = "n" },
+        { "<leader>dc", "<cmd>lua require('dap').continue()<cr>", desc = "Продолжить", mode = "n" },
+        { "<leader>do", "<cmd>lua require('dap').step_over()<cr>", desc = "Шаг с пропуском", mode = "n" },
+        { "<leader>di", "<cmd>lua require('dap').step_into()<cr>", desc = "Шаг внутрь", mode = "n" },
+        { "<leader>dO", "<cmd>lua require('dap').step_out()<cr>", desc = "Шаг наружу", mode = "n" },
+        { "<leader>dq", "<cmd>lua require('dap').terminate()<cr>", desc = "Завершить отладку", mode = "n" },
 })

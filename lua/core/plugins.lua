@@ -73,5 +73,44 @@ require("lazy").setup({
         "mfussenegger/nvim-dap-python",
         "theHamsta/nvim-dap-virtual-text",
     }
+  },
+  { "kristijanhusak/vim-dadbod-ui",
+  dependencies = {
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", lazy = true, ft = { "sql", "plsql", "mysql", "sqlite", "mssql" } }
+  },
+  cmd = {
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIRenameConnection",
+      "DBUIExecuteQuery",
+      "DBUIFindBuffer",
+  },
+  init = function()
+      vim.g.db_ui_win_position = "left"
+      vim.g.db_ui_use_nerd_fonts = 1
+      vim.g.db_ui_winwidth = 35
+      vim.g.db_ui_save_location = os.getenv("HOME") .. "/Documents/sql"
+      local db_connections_path = os.getenv("HOME") .. "/Documents/sql/.connections.lua"
+      local ok, connections = pcall(dofile, db_connections_path)
+      if ok then
+        vim.g.dbs = connections
+      end
+  end,
+},
+{ 
+  "numToStr/Comment.nvim", 
+  opts = {
+    -- Активировать многострочные комментарии
+    toggler = {
+      line = 'gcc',
+      block = 'gbc',
+    },
+    opleader = {
+      line = 'gc',
+      block = 'gb',
+    }
   }
+}
 })

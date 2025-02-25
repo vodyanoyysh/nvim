@@ -39,4 +39,6 @@ vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame <CR>") --
 
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>w", ":w<CR>") -- save
-vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>") -- comment
+
+-- database
+vim.keymap.set("n", "<leader>dd", ":DBUIToggle<CR>")

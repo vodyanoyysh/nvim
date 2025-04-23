@@ -102,7 +102,6 @@ require("lazy").setup({
 { 
   "numToStr/Comment.nvim", 
   opts = {
-    -- Активировать многострочные комментарии
     toggler = {
       line = 'gcc',
       block = 'gbc',
@@ -112,5 +111,17 @@ require("lazy").setup({
       block = 'gb',
     }
   }
+},
+{
+  "CopilotC-Nvim/CopilotChat.nvim",
+  dependencies = {
+    { "github/copilot.vim" },
+    { "nvim-lua/plenary.nvim", branch = "master" },
+  },
+  build = "make tiktoken",
+  opts = {
+    model = 'claude-3.7-sonnet-thought',
+    proxy = os.getenv("HTTP_PROXY")
+  },
 }
 })

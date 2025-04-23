@@ -42,3 +42,6 @@ vim.keymap.set("n", "<leader>w", ":w<CR>") -- save
 
 -- database
 vim.keymap.set("n", "<leader>dd", ":DBUIToggle<CR>")
+
+-- copilot
+vim.keymap.set("n", "<leader>bb", ":CopilotChatToggle <CR>", { desc = "Copilot Chat toggle" })

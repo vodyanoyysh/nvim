@@ -123,5 +123,19 @@ require("lazy").setup({
     model = 'claude-3.7-sonnet-thought',
     proxy = os.getenv("HTTP_PROXY")
   },
+},
+{
+    "stevearc/conform.nvim",
+    opts = {
+        formatters_by_ft = {
+            javascript = { "prettier" },
+            typescript = { "prettier" },
+            python = { "black" },
+            lua = { "stylua" },
+            html = { "prettier" },
+            css = { "prettier" },
+            json = { "prettier" },
+        },
+    }
 }
 })

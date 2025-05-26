@@ -133,9 +133,62 @@ require("lazy").setup({
             python = { "black" },
             lua = { "stylua" },
             html = { "prettier" },
+            htmldjango = { "prettier" },
             css = { "prettier" },
             json = { "prettier" },
         },
+    formatters = {
+        prettier = {
+            options = {
+                tab_width = 4,
+                print_width = 140,
+            },
+        },
+    },
     }
+},
+{
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+},
+{
+  'rmagatti/auto-session',
+  lazy = false,
+  opts = {
+    suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+  }
+},
+{
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {
+  }
+},
+{
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- add any options here
+  },
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    }
+},
+{
+  "j-hui/fidget.nvim",
+  opts = {
+    -- options
+  },
+},
+{
+  'sindrets/diffview.nvim',
+  dependencies = { 'nvim-lua/plenary.nvim' }
 }
+
 })

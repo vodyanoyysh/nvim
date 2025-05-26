@@ -48,3 +48,8 @@ vim.keymap.set("n", "<leader>dd", ":DBUIToggle<CR>")
 
 -- copilot
 vim.keymap.set("n", "<leader>bb", ":CopilotChatToggle <CR>", { desc = "Copilot Chat toggle" })
+
+-- diffview
+vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>", { desc = "Diffview open" })
+vim.keymap.set("n", "<leader>dvc", ":DiffviewClose<CR>", { desc = "Diffview close" })
+

@@ -3,6 +3,7 @@ require("core.plugins")
 require("core.mappings")
 require("core.themes")
 require("core.configs")
+require("core.autocmds")
 
 -- plugins
 require("plugins.neotree")
@@ -20,3 +21,4 @@ require("plugins.toggleterm")
 require("plugins.withkey")
 require("plugins.autotag")
 require("plugins.dap")
+require("plugins.dadbod")

@@ -121,8 +121,9 @@ require("lazy").setup({
   build = "make tiktoken",
   opts = {
     model = 'claude-3.7-sonnet-thought',
-    proxy = os.getenv("HTTP_PROXY")
-  },
+    proxy = os.getenv("HTTP_PROXY"),
+    history_path = vim.fn.stdpath("data") .. "/copilotchat_history",  
+},
 },
 {
     "stevearc/conform.nvim",

@@ -1,4 +1,6 @@
 local lspconfig = require("lspconfig")
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 
 -- Python
 lspconfig.pyright.setup({
@@ -16,6 +18,7 @@ lspconfig.pyright.setup({
 
 -- Golang
 lspconfig.gopls.setup({
+  capabilities = capabilities, -- Добавляем capabilities здесь
   settings = {
     gopls = {
       usePlaceholders = true,

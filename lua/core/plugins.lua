@@ -25,7 +25,7 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 			"3rd/image.nvim",
 		},
-	},
+},
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "neovim/nvim-lspconfig" },
 	{ "joshdick/onedark.vim" },
@@ -146,6 +146,10 @@ require("lazy").setup({
 			model = "claude-3.7-sonnet-thought",
 			proxy = os.getenv("HTTP_PROXY"),
 			history_path = vim.fn.stdpath("data") .. "/copilotchat_history",
+            mappings = {
+				reset = "<leader>cr", -- изменено с <C-l> на <leader>cr
+			},
+
 		},
 	},
 	{

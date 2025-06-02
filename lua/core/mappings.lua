@@ -53,3 +53,44 @@ vim.keymap.set("n", "<leader>bb", ":CopilotChatToggle <CR>", { desc = "Copilot C
 vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>", { desc = "Diffview open" })
 vim.keymap.set("n", "<leader>dvc", ":DiffviewClose<CR>", { desc = "Diffview close" })
 
+vim.keymap.set('n', '<leader>r', function()
+  local resize_mode = true
+  local status_msg = "РЕЖИМ ИЗМЕНЕНИЯ РАЗМЕРА ОКОН | h/l - ширина | j/k - высота | q/<Esc> - выход"
+  
+  -- Показываем сообщение в статусной строке
+  vim.api.nvim_echo({{status_msg, "WarningMsg"}}, false, {})
+  
+  -- Создаем локальные маппинги для этого буфера
+  local opts = {buffer = 0, silent = true}
+  
+  -- Маппинги для изменения размеров
+  vim.keymap.set('n', 'h', ':vertical resize -5<CR>', opts)
+  vim.keymap.set('n', 'l', ':vertical resize +5<CR>', opts)
+  vim.keymap.set('n', 'j', ':resize +5<CR>', opts)
+  vim.keymap.set('n', 'k', ':resize -5<CR>', opts)
+  
+  -- Маппинги для более точной настройки
+  vim.keymap.set('n', 'H', ':vertical resize -1<CR>', opts)
+  vim.keymap.set('n', 'L', ':vertical resize +1<CR>', opts)
+  vim.keymap.set('n', 'J', ':resize +1<CR>', opts)
+  vim.keymap.set('n', 'K', ':resize -1<CR>', opts)
+  
+  -- Выход из режима
+  local exit_func = function()
+    vim.keymap.del('n', 'h', {buffer = 0})
+    vim.keymap.del('n', 'l', {buffer = 0})
+    vim.keymap.del('n', 'j', {buffer = 0})
+    vim.keymap.del('n', 'k', {buffer = 0})
+    vim.keymap.del('n', 'H', {buffer = 0})
+    vim.keymap.del('n', 'L', {buffer = 0})
+    vim.keymap.del('n', 'J', {buffer = 0})
+    vim.keymap.del('n', 'K', {buffer = 0})
+    vim.keymap.del('n', '<Esc>', {buffer = 0})
+    vim.keymap.del('n', 'q', {buffer = 0})
+    vim.api.nvim_echo({{"Режим изменения размера выключен", "Normal"}}, false, {})
+  end
+  
+  vim.keymap.set('n', '<Esc>', exit_func, opts)
+  vim.keymap.set('n', 'q', exit_func, opts)
+end, {desc = 'Войти в режим изменения размеров окон'})
+

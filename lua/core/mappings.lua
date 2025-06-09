@@ -94,3 +94,63 @@ vim.keymap.set('n', '<leader>r', function()
   vim.keymap.set('n', 'q', exit_func, opts)
 end, {desc = 'Войти в режим изменения размеров окон'})
 
+
+local diagnostic_enabled = true -- Начальное состояние (включено)
+
+vim.keymap.set('n', '<leader>le', function()
+    diagnostic_enabled = not diagnostic_enabled
+    
+    if diagnostic_enabled then
+        -- Включаем отображение диагностики в строке
+        vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+        })
+        vim.notify("Диагностика в строке включена", vim.log.levels.INFO)
+    else
+        -- Отключаем отображение диагностики в строке
+        vim.diagnostic.config({
+            virtual_text = false,
+            signs = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+        })
+        vim.notify("Диагностика в строке отключена", vim.log.levels.INFO)
+    end
+end, { desc = 'Включение/выключение диагностики ошибок в строке' })
+
+-- Копирование текста диагностики (ошибок) в буфер обмена
+vim.keymap.set('n', '<leader>lc', function()
+    local line = vim.fn.line('.')
+    local diagnostics = vim.diagnostic.get(0, { lnum = line - 1 })
+    
+    if #diagnostics == 0 then
+        vim.notify("На этой строке нет диагностических сообщений", vim.log.levels.WARN)
+        return
+    end
+    
+    -- Создаем текст из всех диагностических сообщений на строке
+    local messages = {}
+    for _, diagnostic in ipairs(diagnostics) do
+        local prefix = ''
+        if diagnostic.severity == vim.diagnostic.severity.ERROR then
+            prefix = "[ОШИБКА] "
+        elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+            prefix = "[ПРЕДУПРЕЖДЕНИЕ] "
+        elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+            prefix = "[ИНФО] "
+        elseif diagnostic.severity == vim.diagnostic.severity.HINT then
+            prefix = "[ПОДСКАЗКА] "
+        end
+        table.insert(messages, prefix .. diagnostic.message)
+    end
+    
+    local full_message = table.concat(messages, "\n")
+    vim.fn.setreg('+', full_message)  -- Копируем в системный буфер обмена (+ регистр)
+    vim.notify("Диагностическое сообщение скопировано:\n" .. full_message, vim.log.levels.INFO)
+end, { desc = 'Копировать текст ошибки в строке' })
+
